@@ -1,0 +1,27 @@
+<h1>Welcome to Employee Management System!!!</h1>
+<div>
+    <form>
+      Enter Department:<input type="text" [(ngModel)] = "employee.dept" name="dept"/><br/>
+      Enter Name:<input type="text" [(ngModel)] = "employee.name" name="name"/><br/>
+      Enter Salary:<input type="text" [(ngModel)] = "employee.salary" name="salary"/><br/>
+      <button (click) ="addEmployee()">Add Employee</button>
+    </form>
+</div>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>DEPT</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>ACTION</th>
+        </tr>
+        <tr *ngFor = "let employee  of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.dept}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.salary}}</td>
+            <td>EDIT | <button (click)="deleteEmployee(employee.id)" >DELETE</button></td>
+        </tr>
+    </table>
+</div>
